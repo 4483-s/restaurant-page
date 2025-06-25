@@ -10,30 +10,33 @@ const content = document.querySelector(".content");
 const buttons = document.querySelectorAll(".buttons");
 buttons.forEach((b) =>
   b.addEventListener("click", function () {
-    clickButton(b);
+    if (b.id === current) {
+      return;
+    }
+    appendContent(b.id);
+    waterTheme(b);
   })
 );
-function clickButton(button) {
-  const bid = button.id;
-  if (bid === current) {
-    return;
+
+function appendContent(bid) {
+  if (content.firstElementChild) {
+    content.firstElementChild.remove();
   }
-  appendContent(bid);
-}
-function appendContent(b) {
-  if (document.querySelector(".water")) {
-    document.querySelector(".water").classList.remove("water");
-  }
-  const active = document.querySelector(`#${b}`);
-  active.classList.add("water");
-  active.parentElement.append(waterimg);
-  if (b === "home") {
+  if (bid === "home") {
     content.append(homeContent);
-  } else if (b === "menu") {
+  } else if (bid === "menu") {
     content.append(menuContent);
   } else {
     content.append(aboutContent);
   }
   current = b;
 }
-appendContent(current);
+function waterTheme(b) {
+  if (document.querySelector(".water")) {
+    document.querySelector(".water").classList.remove("water");
+  }
+  b.classList.add("water");
+  b.parentElement.append(waterimg);
+}
+appendContent("home");
+waterTheme(document.querySelector("#home"));
