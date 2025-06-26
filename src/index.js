@@ -29,7 +29,7 @@ function appendContent(bid) {
   } else {
     content.append(aboutContent);
   }
-  current = b;
+  current = bid;
 }
 function waterTheme(b) {
   if (document.querySelector(".water")) {
