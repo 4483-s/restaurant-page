@@ -1,5 +1,5 @@
 import "./style.css";
-import dripping from "./waterdrip.png";
+import dripping from "./img/waterdrip.png";
 import homeContent from "./home";
 import menuContent from "./menu";
 import aboutContent from "./about";

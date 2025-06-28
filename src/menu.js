@@ -1,4 +1,5 @@
 const content = document.createElement("div");
+content.classList.add("menu");
 // import steak1img from "./img/steak1.jpg";
 // import steak2img from "./img/steak2.jpg";
 // import steak3img from "./img/steak3.jpg";
@@ -29,13 +30,25 @@ const imageNames = [
   "burger2",
   "beer1",
 ];
-
+const itemNames = [
+  "Steak Salad $23.00",
+  "Steak and Sauce $24.00",
+  "Steak $19.00",
+  "Cake $10.00",
+  "Beef Burger $11.99",
+  "Black Burger $13.50",
+  "Beer $4.00",
+];
 const images = imageNames.map((name) => {
   const img = document.createElement("img");
   img.src = require(`./img/${name}.jpg`);
   return img;
 });
-for (let img of images) {
-  content.append(img);
+for (let i = 0; i < images.length; i++) {
+  const menuItem = document.createElement("div");
+  menuItem.append(images[i], itemNames[i]);
+  menuItem.classList.add("menuItems");
+  content.append(menuItem);
 }
+
 export default content;

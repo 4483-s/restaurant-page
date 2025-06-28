@@ -52,7 +52,6 @@ nav {
   justify-content: space-around;
 }
 .content {
-  height: 1700px;
   width: 450px;
   min-width: 60%;
   background-color: rgba(31, 46, 77, 0.9);
@@ -63,7 +62,7 @@ nav {
 }
 .water {
   background-color: #62d3db;
-  color: red;
+  color: rgb(31, 46, 77);
 }
 .homeFirstHalf {
   display: grid;
@@ -76,10 +75,15 @@ nav {
   width: 480px;
   border-radius: 40px;
 }
-.mainimg,
-.homeFirstHalf > p:nth-child(2) {
-  /* padding: 1em; */
-}
+
 .homeFirstHalf > * {
   flex: 1;
+}
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));
+}
+.menu img {
+  width: 100%;
+  height: auto;
 }
