@@ -1,3 +1,4 @@
 const text = document.createElement("p");
-text.textContent = "about text";
+const lorem = 'lorem lorem'
+text.textContent = lorem;
 export default text;
