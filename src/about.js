@@ -1,4 +1,4 @@
 const text = document.createElement("p");
-const lorem = 'lorem lorem'
+const lorem = 'deployment testing'
 text.textContent = lorem;
 export default text;
